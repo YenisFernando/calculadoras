@@ -20,10 +20,13 @@
         border-radius: 10px;
         padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
     }
 
     .calculator input[type="text"] {
-        width: 100%;
+        grid-column: span 4;
         margin-bottom: 10px;
         padding: 10px;
         font-size: 1.5em;
@@ -33,10 +36,8 @@
     }
 
     .calculator input[type="button"] {
-        width: 48%;
         padding: 10px;
         font-size: 1.2em;
-        margin: 5px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -51,6 +52,7 @@
     }
 
     .clear {
+        grid-column: span 2;
         background-color: #ff6666;
         color: white;
     }
@@ -64,17 +66,14 @@
     <input type="button" value="8" onclick="appendToDisplay('8')">
     <input type="button" value="9" onclick="appendToDisplay('9')">
     <input type="button" value="+" onclick="appendToDisplay('+')">
-    <br>
     <input type="button" value="4" onclick="appendToDisplay('4')">
     <input type="button" value="5" onclick="appendToDisplay('5')">
     <input type="button" value="6" onclick="appendToDisplay('6')">
     <input type="button" value="-" onclick="appendToDisplay('-')">
-    <br>
     <input type="button" value="1" onclick="appendToDisplay('1')">
     <input type="button" value="2" onclick="appendToDisplay('2')">
     <input type="button" value="3" onclick="appendToDisplay('3')">
     <input type="button" value="*" onclick="appendToDisplay('*')">
-    <br>
     <input type="button" value="C" onclick="clearDisplay()" class="clear">
     <input type="button" value="0" onclick="appendToDisplay('0')">
     <input type="button" value="=" onclick="calculate()">
